@@ -12,13 +12,18 @@ WHERE `cfu` = 10
 
 <!-- 3. Selezionare tutti gli studenti che hanno più di 30 anni -->
 
-SELECT `date_of_birth`, DATEDIFF( YEAR(CURDATE()), YEAR(`date_of_birth`)) > 30
-FROM `students`  <!-- (5000) -->
+SELECT *
+FROM `students` 
+WHERE `date_of_birth` < DATE_SUB(CURDATE(), INTERVAL 30 YEAR) <!-- (3788) -->
 
 <!-- 4. Selezionare tutti i corsi del primo semestre di un qualsiasi corso di laurea (286)-->
 
 SELECT * 
 FROM `courses`
 WHERE `degree_id` LIKE 1 AND `period` LIKE 'I semestre' <!-- (10) -->
+
+SELECT COUNT(id)
+FROM `COURSES` 
+WHERE period LIKE 'I semestre' <!-- 709 -->
 
 <!-- 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21) -->
