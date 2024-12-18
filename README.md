@@ -15,3 +15,9 @@ WHERE `cfu` = 10
 SELECT * 
 FROM `students`
 WHERE YEAR(date_of_birth) < 1993  <!-- (3501) -->
+
+<!-- 4. Selezionare tutti i corsi del primo semestre di un qualsiasi corso di laurea (286)-->
+
+SELECT * 
+FROM `courses`
+WHERE degree_id LIKE 1 AND period LIKE 'I semestre' <!-- (10) -->
