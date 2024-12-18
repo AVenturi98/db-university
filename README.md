@@ -31,3 +31,9 @@ WHERE period LIKE 'I semestre' <!-- 709 -->
 SELECT *
 FROM `exams` 
 WHERE `hour` >= '14:%:0' AND `date` = '2020-06-20'
+
+<!-- 6. Seleziona tutti i corsi di laurea magistrale (38) -->
+
+SELECT *
+FROM `degrees` 
+WHERE `level` LIKE 'magistrale'
