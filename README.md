@@ -30,7 +30,7 @@ WHERE period LIKE 'I semestre' <!-- 709 -->
 
 SELECT *
 FROM `exams` 
-WHERE `hour` >= '14:%:0' AND `date` = '2020-06-20'
+WHERE `hour` >= '14:00:00' AND `date` = '2020-06-20'
 
 <!-- 6. Seleziona tutti i corsi di laurea magistrale (38) -->
 
@@ -48,3 +48,19 @@ FROM `departments`
 SELECT COUNT(id)
 FROM `teachers` 
 WHERE `phone` IS NOT NULL
+
+<!-- 9. Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale) -->
+
+SELECT *, CONCAT(name, ' ', surname, ' | ', 'degreeID: ',degree_id, ' | ', email) AS data_user
+FROM `students`
+
+  <!------------------------------------->
+
+INSERT INTO `students` (degree_id, name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email)
+VALUES (73, 'Alessandro', 'Venturi', '1998-10-10', 'ABCDEFGHILMNOPQR', CURDATE(), FLOOR(RAND(999999)), 'tantisalutid@santolussurgiu.com');
+
+<!-- 10. Cambiare in numero dell'ufficio del professor Pietro Rizzo in 216 -->
+
+UPDATE `teachers`
+SET office_number = 126
+WHERE id = 58
