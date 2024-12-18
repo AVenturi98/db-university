@@ -37,3 +37,8 @@ WHERE `hour` >= '14:%:0' AND `date` = '2020-06-20'
 SELECT *
 FROM `degrees` 
 WHERE `level` LIKE 'magistrale'
+
+<!-- 7. Da quanti compartimenti è composta l'università? (12) -->
+
+SELECT COUNT(id)
+FROM `departments` 
