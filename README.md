@@ -64,3 +64,7 @@ VALUES (73, 'Alessandro', 'Venturi', '1998-10-10', 'ABCDEFGHILMNOPQR', CURDATE()
 UPDATE `teachers`
 SET office_number = 126
 WHERE id = 58
+
+<!-- 11. Eliminare dalla tabella studenti il record creato precedentemente a punto 9 -->
+
+DELETE FROM `students` WHERE id = 5012
