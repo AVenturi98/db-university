@@ -37,3 +37,13 @@ ON `c`.`degree_id` = `d`.`id`
 JOIN `teachers` AS `t` 
 ON `d`.`id` = `t`.`id` 
 
+<!-- 6. Selezionare titto i docenti che insegnano nel Dipartimento di Matematica -->
+
+FROM `courses` AS `c`
+JOIN `degrees` AS `d`
+ON `c`.`degree_id` = `d`.`id` 
+JOIN `teachers` AS `t` 
+ON `d`.`id` = `t`.`id` 
+JOIN `departments` AS `dep`
+ON `dep`.`id` = `d`.`id`
+WHERE `dep`.`name` LIKE '% Matematica' AND `dep`.`id` = `t`.`id`
