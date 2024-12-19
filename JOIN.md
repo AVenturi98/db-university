@@ -19,3 +19,12 @@ FROM `course_teacher` AS `c_t`
 INNER JOIN `teachers` AS `t`
 ON `t`.`id` = `c_t`.`teacher_id` AND `id` LIKE 44
 
+<!-- 4. Selezionare tutti gli studenti con i dati realativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in oridine alfabetico per cognome e nome -->
+
+SELECT *
+FROM `students`
+JOIN `degrees` AS `d`
+ON `students`.`degree_id` = `d`.`id` 
+JOIN `departments` 
+ON `d`.`department_id` = `departments`.`id` 
+
