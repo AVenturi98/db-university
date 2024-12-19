@@ -8,7 +8,7 @@ WHERE YEAR(`date_of_birth`) = 1990
 
 SELECT *
 FROM `courses`
-WHERE `cfu` = 10
+WHERE `cfu` > 10
 
 <!-- 3. Selezionare tutti gli studenti che hanno più di 30 anni -->
 
@@ -20,7 +20,7 @@ WHERE `date_of_birth` < DATE_SUB(CURDATE(), INTERVAL 30 YEAR) <!-- (3788) -->
 
 SELECT * 
 FROM `courses`
-WHERE `degree_id` LIKE 1 AND `period` LIKE 'I semestre' <!-- (10) -->
+WHERE `year` LIKE 1 AND `period` LIKE 'I semestre' <!-- (10) -->
 
 SELECT COUNT(id)
 FROM `COURSES` 
@@ -47,7 +47,7 @@ FROM `departments`
 
 SELECT COUNT(id)
 FROM `teachers` 
-WHERE `phone` IS NOT NULL
+WHERE `phone` IS NULL
 
 <!-- 9. Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale) -->
 
